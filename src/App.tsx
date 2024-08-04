@@ -130,7 +130,7 @@ const App = () => {
             </div>
             <div
               id="hero-image"
-              className="max-w-96 border-gray-200 border shadow-2xl rounded-xl opacity-0"
+              className="max-w-96 mb-20 md:mb-0 border-gray-200 border shadow-2xl rounded-xl opacity-0"
             >
               <img
                 id="img1"
@@ -140,7 +140,7 @@ const App = () => {
               />
             </div>
           </div>
-          <div className="h-[120vh] md:h-screen w-screen px-4 py-8 md:px-24 flex flex-col md:flex-row bg-gray-950 justify-between place-items-center">
+          <div className="h-[135vh] md:h-screen w-screen px-4 py-8 md:px-24 flex flex-col md:flex-row bg-gray-950 justify-between place-items-center">
             <div className="flex flex-col w-full md:w-3/5">
               <p
                 id="text1"
@@ -166,19 +166,19 @@ const App = () => {
               <Marquee direction="right" autoFill className="">
                 <img
                   src="/ara3.jpeg"
-                  className="h-32 md:h-[480px] mx-10 shadow-lg shadow-gray-500 rounded-xl"
+                  className="h-48 md:h-[480px] mx-10 shadow-lg shadow-gray-500 rounded-xl"
                 />
                 <img
                   src="/ara2.jpeg"
-                  className="h-32 md:h-[480px] mx-10 shadow-lg shadow-gray-500 rounded-xl"
+                  className="h-48 md:h-[480px] mx-10 shadow-lg shadow-gray-500 rounded-xl"
                 />
                 <img
                   src="/ara6.jpeg"
-                  className="h-32 md:h-[480px] shadow-lg shadow-gray-500 mx-10 rounded-xl"
+                  className="h-48 md:h-[480px] shadow-lg shadow-gray-500 mx-10 rounded-xl"
                 />
                 <img
                   src="/ara4.jpeg"
-                  className="h-32 md:h-[480px]  shadow-lg shadow-gray-500 mx-10 rounded-xl"
+                  className="h-48 md:h-[480px]  shadow-lg shadow-gray-500 mx-10 rounded-xl"
                 />
               </Marquee>
               <Spotify
