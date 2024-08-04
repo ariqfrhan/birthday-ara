@@ -16,7 +16,7 @@ const App = () => {
   const [showSlider, setShowSlider] = useState(false);
   const [showWelcome, setShowWelcome] = useState(false);
 
-  const targetDate = new Date("2024-08-04T00:00:00");
+  const targetDate = new Date("2024-08-09T00:00:00");
 
   useLayoutEffect(() => {
     if (showSlider) {
