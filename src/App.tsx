@@ -12,16 +12,28 @@ gsap.registerPlugin(TextPlugin);
 
 const App = () => {
   const comp = useRef<HTMLDivElement>(null);
+  const audioRef = useRef<HTMLAudioElement>(null);
   const [showSlider, setShowSlider] = useState(false);
   const [showWelcome, setShowWelcome] = useState(false);
 
-  const targetDate = new Date("2024-08-04T19:00:00");
+  const targetDate = new Date("2024-08-04T00:00:00");
 
   useLayoutEffect(() => {
     if (showSlider) {
       const ctx = gsap.context(() => {
         const t1 = gsap.timeline({
-          onComplete: () => setShowWelcome(true),
+          onStart: () => {
+            if (audioRef.current) {
+              audioRef.current.play();
+            }
+          },
+          onComplete: () => {
+            if (audioRef.current) {
+              audioRef.current.pause();
+              audioRef.current.currentTime = 0;
+            }
+            setShowWelcome(true);
+          },
         });
         t1.from("#intro-slider", {
           xPercent: -100,
@@ -97,6 +109,7 @@ const App = () => {
 
   return (
     <div className="relative" ref={comp}>
+      <audio ref={audioRef} src="/audio.m4a" />
       {!showSlider && (
         <Countdown targetDate={targetDate} onEnd={() => setShowSlider(true)} />
       )}
