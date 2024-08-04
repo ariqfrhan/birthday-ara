@@ -23,14 +23,27 @@ const App = () => {
       const ctx = gsap.context(() => {
         const t1 = gsap.timeline({
           onStart: () => {
+            // Play audio when timeline starts
             if (audioRef.current) {
-              audioRef.current.play();
+              audioRef.current
+                .play()
+                .catch((error) => console.log("Audio play failed:", error));
             }
           },
           onComplete: () => {
             if (audioRef.current) {
-              audioRef.current.pause();
-              audioRef.current.currentTime = 0;
+              gsap.to(audioRef.current, {
+                opacity: 0,
+                duration: 1,
+                onComplete: () => {
+                  audioRef.current!.pause();
+                  audioRef.current!.currentTime = 0;
+                  gsap.to(audioRef.current, {
+                    opacity: 1, // Reset opacity for future use
+                    duration: 0,
+                  });
+                },
+              });
             }
             setShowWelcome(true);
           },
