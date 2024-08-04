@@ -50,30 +50,30 @@ const Countdown: React.FC<CountdownProps> = ({ targetDate, onEnd }) => {
 
   return (
     <div className="h-screen bg-gray-950 w-screen flex flex-col justify-center place-items-center text-white">
-      <div className="text-3xl font-bold">
+      <div className="text-xl md:text-3xl font-bold text-center">
         Countdown to <span className="text-yellow-500">Ara's</span> birthday!!
       </div>
-      <div className="flex items-center">
-        <div className="flex flex-col text-center px-6">
-          <span className="text-9xl font-bold">
+      <div className="flex items-center mt-3 ">
+        <div className="flex flex-col text-center px-3 md:px-6">
+          <span className="text-5xl md:text-9xl font-bold">
             {String(timeLeft.days).padStart(2, "0")}
           </span>
           <span className="font-semibold">Days</span>
         </div>
-        <div className="flex flex-col text-center px-6">
-          <span className="text-9xl font-bold">
+        <div className="flex flex-col text-center px-3 md:px-6">
+          <span className="text-5xl md:text-9xl font-bold">
             {String(timeLeft.hours).padStart(2, "0")}
           </span>
           <span className="font-semibold">Hours</span>
         </div>
-        <div className="flex flex-col text-center px-6">
-          <span className="text-9xl font-bold">
+        <div className="flex flex-col text-center px-3 md:px-6">
+          <span className="text-5xl md:text-9xl font-bold">
             {String(timeLeft.minutes).padStart(2, "0")}
           </span>
           <span className="font-semibold">Minutes</span>
         </div>
-        <div className="flex flex-col text-center px-6">
-          <span className="text-9xl font-bold text-yellow-500">
+        <div className="flex flex-col text-center px-3 md:px-6">
+          <span className="text-5xl md:text-9xl font-bold text-yellow-500">
             {String(timeLeft.seconds).padStart(2, "0")}
           </span>
           <span className="text-yellow-500 font-semibold">Seconds</span>
